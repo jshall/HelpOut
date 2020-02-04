@@ -372,7 +372,8 @@ function ConvertTo-MAML
         $strWrite.Close()
         $strWrite.Dispose()
     }
-} 
+}
+
 #.ExternalHelp HelpOut-Help.xml
 function Install-MAML
 {
@@ -536,6 +537,7 @@ function Install-MAML
                     $sr.Close()
                     $sr.Dispose()               
                 }
+            $newFileContent = ($newFileContent -join "`n")
             
             # Last but not least, we 
             $combinedCommandsPath = Join-Path $theModuleRoot $ScriptName # determine the path for our combined commands file.
@@ -550,7 +552,8 @@ function Install-MAML
         }
     }
 }
- 
+
+
 #.ExternalHelp HelpOut-Help.xml
 function Save-MAML
 {
